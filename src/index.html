@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hwchain</title>
+    <script type="text/javascript" src="./hwchain-crypto/build/index.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var API = window.hwchainCrypto;
+
+    var wallet = API.generateAddress().wallet;
+    var wallet1 = API.generateAddress(wallet.secret).wallet;
+    document.write(JSON.stringify(wallet) + "<br/>");
+    document.write(JSON.stringify(wallet1) + "<br/>");
+    document.write("valid:" + API.isValidAddress(wallet.address).wallet + "<br/><br/>");
+
+</script>
+</body>
+</html>
